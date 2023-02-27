@@ -8,20 +8,29 @@ body {
 	width: 8.5in;
 	height: 11in;
 	box-shadow: -.1in -.1in .5in darkgray, .1in .1in .5in gray;
-	position: absolute ;	
+	position: absolute;	
+}
+
+@media screen and (max-width:720px) {
+	.page_outer {
+		box-shadow: none;
+		}
+	p {
+		text-color: red;
+	}
 }
 
 .page_inner{
-	margin: 1in;  
+	margin: 0.5in;  
 }
 
 th {
 	text-align: left ;
 }
 
-span {
+.date {
 	float: right;
 	font-style:	italic;
 }
 
-ul  { margin-top: -1em; }  
+ul  { margin-top: -1em; }

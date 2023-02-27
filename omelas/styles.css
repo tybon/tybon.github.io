@@ -1,0 +1,10 @@
+body {
+	font-size:12pt;
+	margin:1in;
+	margin-right:1.75in;
+}
+
+strong {
+	font-weight:normal;
+	color:red;
+}
