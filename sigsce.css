@@ -1,0 +1,11 @@
+body {
+	margin:1in;
+	margin-right:1.75in;
+	background-color: white;
+	color: black;
+	font-size: 12pt;
+}
+
+b {
+	font-color:orange;
+}
