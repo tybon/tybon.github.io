@@ -1,0 +1,125 @@
+<script>
+
+// STOP data
+
+function randset(max,num)
+{
+	let set = []
+	for (let i = 0; i<=max; i++)
+	{
+		set.push(Math.floor(Math.random()*max))
+	}
+	return set
+}
+
+function peter(arr) {
+	let sett = []
+	for (let i=0; i<=arr.length;i++) {
+		sett.push(arr.pop())
+	}
+	return sett.pop()
+}
+
+let x = ["ColA", "ColB", "ColC", "ColD", "ColE", "ColF"] ;
+
+let y = 
+	[
+		["First", 85,22,34,61,81],
+		["Second", 52,6,9,87,45,65],
+		["Third", 69,96,5,2,54],
+		["Fourth", 45,4,47,78,32],
+		["Fifth", 54,54,4,4,89]
+	] ;
+	
+// Census data
+
+let xOrg = ["Black", "Native American", "Asian/PI", "Latinx", "White"] ;
+	
+let pops = 
+	[
+		["Marion", 16, 28, 37, 282, 634],
+		["Multnomah", 60, 15, 89, 127, 681],
+		["Oregon", 23, 19, 55, 140, 741],
+		["Portland", 56, 9, 90, 104, 688],
+		["Salem", 14, 10, 51, 224, 658]
+	] ;
+	
+// Need census data in stop data order	
+/*
+function reorder()
+{
+	let popsNew = [] ;
+	for (let i = 0 ; i < pops.length ; i++)
+	{
+		let pop_New = [] ;
+		pop_New.push(pops[i][0]) ;
+		for (let j = 0 ; j < x.length ; j++)
+		{
+			locj = xOrg.indexOf(x[j])
+			console.log("help")
+			console.log(x[j])
+			console.log(xOrg[locj])
+			locj >= 0 ? pop_New.push(pops[i][locj+1]) : pop_New.push(0) ;
+		}
+		popsNew.push(pop_New) ;
+	}
+	return popsNew ;	
+}
+
+pops = reorder()
+
+console.log(pops)
+
+*/
+
+function iToDataPoint(labs,pts,i)
+{
+	let dataPoint = [] ;
+	let formatString = "#,##0\"%\"" ;
+	for (let j = 0 ; j < pts.length ; j++)
+	{
+		dataPoint.push( { label: pts[j][0], y: pts[j][i+1] } ) ;
+	}
+	return {
+			type: "stackedColumn100",
+			name: labs[i],
+			showInLegend: true,
+			yValueFormatString: formatString,
+			dataPoints: dataPoint
+		} ;
+}
+
+function makeData(labs,pts)
+{
+	let data = [] ;
+	// Hack to standardize ordering...
+	for (let i = 0 ; i < labs.length ; i++)
+	{
+		data.push(iToDataPoint(labs,pts,i)) ;
+	}
+	return data ;
+}
+	
+function render() {
+	$("#chartStop").CanvasJSChart({title:{text: "Toy Data" }, data: makeData(x,y)});
+}
+</script>
+</head>
+<body onload="render()" >
+<div id="chartStop" style="height: 370px; width: 100%;"></div>
+<br><br><br>
+<div id="chartPop_" style="height: 370px; width: 100%;"></div>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
+<a href="../">back</a>
+Response to <a href="https://www.epi.org/publication/employers-steal-billions-from-workers-paychecks-each-year/">this study</a>
+
+<p>One thing I will never understand is how somebody who has the privilege of owning a business also does not have the money to fairly compensate for the surplus value they gain from the workers they employ. It boggles my mind. I could probably take a class with ten hours of theory on this subject and still not understand any more than I had before. A person owns a business and cannot afford to fairly pay someone the legally mandated minimum wage?</p>
+<p>If any phrase used in generally figurative contexts has any more applicability in this context, it ought to be “the cost of doing business.” Unfortunately, this includes paying the workers an employer voluntarily enlists to help out with the business. In more progressive states like Oregon and Washington, the minimum wage is a bit more livable than the wages that might be found in states like Pennsylvania. Wages have been almost stagnant compared to the increase in the cost of living, and that is insulting to the lower class who is essentially told that they are not good enough to live comfortably, yet they make up the backbone for the infrastructure of our society.</p>
+<p>Need a quick lunch because you forgot to bring your own? Guess who will be the one taking your order. Guess who will be the one making your food. Need groceries for the next week? There is a reason you are in and out of that store in less than an hour, and the occupation behind the reason really ought to be synonymous with the word “librarian.” It is mostly unfortunate that these kinds of workers are more likely to be part-time workers and therefore, according to the study linked above, more likely to see illegal discrepancies in their pay. Then imagine being someone who is not either white or a man and being a part time worker! Our society is fueled by people like them, but they are not compensated as such and furthermore are being exploited!</p>
+<p>I cannot imagine that this data was collected unethically. It appears anonymized. I would have wanted the names of each company underpaying its workers, but the responsibility of data scientists is to present findings to promote systemic changes, and naming and shaming does not accomplish this objective, so the omission of the names of each company is, in that respect, justified. Ethical use of data like those presented in this study is characterized by using the data for the purpose of investigation into the question that the data was collected to answer and no other purpose. For instance, selling this data to somebody after it was collected and explored should be considered unethical practice. An example of unethical use of this data might be to determine the next-lowest compensation rate as an employer. If people are being underpaid by X, then underpay by X+e where e is some marginal increase in pay.</p>
+
+
+</body>
+</html>
