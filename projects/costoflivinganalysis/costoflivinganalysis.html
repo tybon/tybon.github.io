@@ -2,15 +2,30 @@
 <html>
 <head>
 <title>Cost of Living Project</title>
+<link rel="stylesheet" href="./colanalysis.css">
 </head>
 
 <body>
 
 <p>Project objective and overview:</p>
 
-<p></p>
+<p>The present project aims to use the Kaggle dataset, "<a href="https://www.kaggle.com/datasets/asaniczka/us-cost-of-living-dataset-3171-counties">US Cost of Living Dataset (1877 Counties)</a>" by <a href="https://www.kaggle.com/asaniczka">asaniczka</a> to practice skills in data engineering, analysis, visualization, predictive modeling, diagnostic analysis, and presentation of insights.</p>
 
-<p></p>
+<p>According to the Kaggle dataset page,
+<table><tr>
+<td>The US Family Budget Dataset provides insights into the cost of living in different US counties based on the Family Budget Calculator by the Economic Policy Institute (EPI).
+
+This dataset offers community-specific estimates for ten family types, including one or two adults with zero to four children, in all 1877 counties and metro areas across the United States.</td>
+</tr></table>
+It offers many different task ideas since this is surely a daunting dataset in size. Indeed, it was difficult for me to begin analyzing anything of subtance in the dataset at first, so I had to begin by looking through what the data <i>was</i> and how it was <i>composed</i>. This would give me insights into a) what kinds of variables I'm working with, b) their types, and c) potential relationships each variable might have on others from a cursory glance.</p>
+
+<p>I aim to maintain this page to document my progress on this project. Below, I post my workflow that contributed productively to the goals of the project, and I include ideas to work on and their respective statuses.</p>
+
+<p>The average time I spend weekly on this project is approximately 5 hours. I anticipate that every hour I spend on the project </p>
+
+<br>
+
+<p>Feature matrix:</p>
 
 <!-- 
 <tr>
@@ -20,11 +35,10 @@
 	<td>Milestones and Dates</td>
 	<td>Status</td>
 	<td>Roadblocks</td>
-	<td>Deliverable</td>
+	<td>Value to Add</td>
 	<td>Notes</td>
 </tr>
 !-->
-
 <table>
 	<tr>
 		<th>Feature</th>
@@ -32,23 +46,39 @@
 		<th>Milestones and Dates</th>
 		<th>Status</th>
 		<th>Roadblocks</th>
-		<th>Deliverable</th>
+		<th>Value to Add</th>
 		<th>Notes</th>
 	</tr>
+	
 	<tr>
-		<td>Project Objective and Overview</td>
+		<td><b>Various Exploratory Analyses of Data</b></td>
+		<td>Broad look into dataset to bring out questions about what the data can show.</td>
+		<td><ul>
+				<li><b>10/17/23:</b> Broad boxplots and histograms, factorize categorical data, numerical summaries, </li>
+				<li><b>02/20/24:</b> Coloring/styling graphs, cleaning/reformatting dataframes, proportions and probabiliity tables, </li>
+			</ul></td>
+		<td>EDA complete; delving deeper!</td>
+		<td><ul>
+			<li>Strange behavior with family_member_count versus housing_cost boxplot => signals potential systematic data collection decision that might affect data analysis which remains unclear.</li>
+			<li>Struggled a little with the number of datasets in play, but managed to successfully troubleshoot and make progress.<li></ul></td>
+		<td>Gain a better idea of the data being investigated; formulate specific and well-formed questions to ask and examine.</td>
+		<td>Notes</td>
+	</tr>
+	
+	<tr>
 		<td>Feature</td>
 		<td>Scope</td>
 		<td>Milestones and Dates</td>
 		<td>Status</td>
 		<td>Roadblocks</td>
-		<td>Deliverable</td>
+		<td>Value to Add</td>
 		<td>Notes</td>
 	</tr>
 </table>
 <br>
 <br>
-Feature matrix
+<br>
+Idea matrix
 <table>
 	<tr>
 		<th>Ideas</th>
@@ -59,23 +89,24 @@ Feature matrix
 	</tr>
 	
 	<tr>
-		<td>Ideas</td>
+		<td>a</td>
 		<td>Backlog</td>
 		<td>Priority</td>
 		<td>Work in Progress</td>
 		<td>Completed</td>
 	</tr>
-	
-	<!-->
-	<tr>
-		<td>Ideas</td>
-		<td>Backlog</td>
-		<td>Priority</td>
-		<td>Work in Progress</td>
-		<td>Completed</td>
-	</tr>
-	<!-->
 </table>
+
+<!-->
+<tr>
+	<td>Ideas</td>
+	<td>Backlog</td>
+	<td>Priority</td>
+	<td>Work in Progress</td>
+	<td>Completed</td>
+</tr>
+<!-->
+
 
 </body>
 
